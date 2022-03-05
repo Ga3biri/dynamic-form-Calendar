@@ -1,0 +1,344 @@
+<section class="animate__animated animate__fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h5>مواعيد العمل</h5><span>
+            </span>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+
+                    <!-- Saturday  -->
+                    <div class="form-row row">
+                        <div class="col-md-3 mb-3">
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" value="السبت" readonly style="font-size: 24px;text-align: center;" >
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-8">
+                            <ng-container formArrayName="saturday">
+                                <ng-container *ngFor="let saturdayForm of saturday.controls; let i = index">
+                                    <div class="day-form-row row" >
+                                        <div class="col-md-11" >
+                                            <ng-container [formGroupName]="i" [formGroup]!="saturdayForm">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>من</mat-label>
+                                                            <input matInput type="time" formControlName="from">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>الي</mat-label>
+                                                            <input matInput type="time" formControlName="to">
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                        <div class="col-md-1" *ngIf="i !=0">
+                                            <mat-icon style="cursor: pointer;" class="delete-btn text-danger mt-3" (click)="deleteTime(i,1)">delete_forever</mat-icon>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                        <div class="col-md-1">
+                            <!-- <button style="height: 51px;" class="btn btn-sm btn-primary w-100 mt-1" >+</button> -->
+                            <mat-icon style="cursor: pointer;" class="delete-btn text-primary mt-3" (click)="addTime(1)">note_add</mat-icon>
+                        </div>
+                    </div>
+                    <hr>
+
+
+
+                    <!-- sunday  -->
+                    <div class="form-row row">
+                        <div class="col-md-3 mb-3">
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" value="الأحد" readonly style="font-size: 24px;text-align: center;" >
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-8">
+                            <ng-container formArrayName="sunday">
+                                <ng-container *ngFor="let sundayForm of sunday.controls; let i = index">
+                                    <div class="day-form-row row" >
+                                        <div class="col-md-11" >
+                                            <ng-container [formGroupName]="i" [formGroup]!="sundayForm">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>من</mat-label>
+                                                            <input matInput type="time" formControlName="from">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>الي</mat-label>
+                                                            <input matInput type="time" formControlName="to">
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                        <div class="col-md-1" *ngIf="i !=0">
+                                            <mat-icon style="cursor: pointer;" class="delete-btn text-danger mt-3" (click)="deleteTime(i,2)">delete_forever</mat-icon>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                        <div class="col-md-1">
+                            <!-- <button style="height: 51px;" class="btn btn-sm btn-primary w-100 mt-1" >+</button> -->
+                            <mat-icon style="cursor: pointer;" class="delete-btn text-primary mt-3" (click)="addTime(2)">note_add</mat-icon>
+                        </div>
+                    </div>
+                    <hr>
+
+
+
+
+
+                    <!-- monday  -->
+                    <div class="form-row row">
+                        <div class="col-md-3 mb-3">
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" value="الأثنين" readonly style="font-size: 24px;text-align: center;" >
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-8">
+                            <ng-container formArrayName="monday">
+                                <ng-container *ngFor="let mondayForm of monday.controls; let i = index">
+                                    <div class="day-form-row row" >
+                                        <div class="col-md-11" >
+                                            <ng-container [formGroupName]="i" [formGroup]!="mondayForm">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>من</mat-label>
+                                                            <input matInput type="time" formControlName="from">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>الي</mat-label>
+                                                            <input matInput type="time" formControlName="to">
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                        <div class="col-md-1" *ngIf="i !=0">
+                                            <mat-icon style="cursor: pointer;" class="delete-btn text-danger mt-3" (click)="deleteTime(i,3)">delete_forever</mat-icon>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                        <div class="col-md-1">
+                            <!-- <button style="height: 51px;" class="btn btn-sm btn-primary w-100 mt-1" >+</button> -->
+                            <mat-icon style="cursor: pointer;" class="delete-btn text-primary mt-3" (click)="addTime(3)">note_add</mat-icon>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- tuseday  -->
+                    <div class="form-row row">
+                        <div class="col-md-3 mb-3">
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" value="الثلاثاء" readonly style="font-size: 24px;text-align: center;" >
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-8">
+                            <ng-container formArrayName="tuseday">
+                                <ng-container *ngFor="let tusedayForm of tuseday.controls; let i = index">
+                                    <div class="day-form-row row" >
+                                        <div class="col-md-11" >
+                                            <ng-container [formGroupName]="i" [formGroup]!="tusedayForm">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>من</mat-label>
+                                                            <input matInput type="time" formControlName="from">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>الي</mat-label>
+                                                            <input matInput type="time" formControlName="to">
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                        <div class="col-md-1" *ngIf="i !=0">
+                                            <mat-icon style="cursor: pointer;" class="delete-btn text-danger mt-3" (click)="deleteTime(i,4)">delete_forever</mat-icon>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                        <div class="col-md-1">
+                            <!-- <button style="height: 51px;" class="btn btn-sm btn-primary w-100 mt-1" >+</button> -->
+                            <mat-icon style="cursor: pointer;" class="delete-btn text-primary mt-3" (click)="addTime(4)">note_add</mat-icon>
+                        </div>
+                    </div>
+                    <hr>
+
+
+                    <!-- wedensday  -->
+                    <div class="form-row row">
+                        <div class="col-md-3 mb-3">
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" value="الأربعاء" readonly style="font-size: 24px;text-align: center;" >
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-8">
+                            <ng-container formArrayName="wedensday">
+                                <ng-container *ngFor="let wedensdayForm of wedensday.controls; let i = index">
+                                    <div class="day-form-row row" >
+                                        <div class="col-md-11" >
+                                            <ng-container [formGroupName]="i" [formGroup]!="wedensdayForm">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>من</mat-label>
+                                                            <input matInput type="time" formControlName="from">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>الي</mat-label>
+                                                            <input matInput type="time" formControlName="to">
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                        <div class="col-md-1" *ngIf="i !=0">
+                                            <mat-icon style="cursor: pointer;" class="delete-btn text-danger mt-3" (click)="deleteTime(i,5)">delete_forever</mat-icon>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                        <div class="col-md-1">
+                            <!-- <button style="height: 51px;" class="btn btn-sm btn-primary w-100 mt-1" >+</button> -->
+                            <mat-icon style="cursor: pointer;" class="delete-btn text-primary mt-3" (click)="addTime(5)">note_add</mat-icon>
+                        </div>
+                    </div>
+                    <hr>
+
+
+
+                    <!-- thursday  -->
+                    <div class="form-row row">
+                        <div class="col-md-3 mb-3">
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" value="الخميس" readonly style="font-size: 24px;text-align: center;" >
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-8">
+                            <ng-container formArrayName="thursday">
+                                <ng-container *ngFor="let thursdayForm of thursday.controls; let i = index">
+                                    <div class="day-form-row row" >
+                                        <div class="col-md-11" >
+                                            <ng-container [formGroupName]="i" [formGroup]!="thursdayForm">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>من</mat-label>
+                                                            <input matInput type="time" formControlName="from">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>الي</mat-label>
+                                                            <input matInput type="time" formControlName="to">
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                        <div class="col-md-1" *ngIf="i !=0">
+                                            <mat-icon style="cursor: pointer;" class="delete-btn text-danger mt-3" (click)="deleteTime(i,6)">delete_forever</mat-icon>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                        <div class="col-md-1">
+                            <!-- <button style="height: 51px;" class="btn btn-sm btn-primary w-100 mt-1" >+</button> -->
+                            <mat-icon style="cursor: pointer;" class="delete-btn text-primary mt-3" (click)="addTime(6)">note_add</mat-icon>
+                        </div>
+                    </div>
+                    <hr>
+
+
+
+
+                    <!-- friday  -->
+                    <div class="form-row row">
+                        <div class="col-md-3 mb-3">
+                            <mat-form-field appearance="outline">
+                                <input matInput type="text" value="الجمعة" readonly style="font-size: 24px;text-align: center;" >
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-8">
+                            <ng-container formArrayName="friday">
+                                <ng-container *ngFor="let fridayForm of friday.controls; let i = index">
+                                    <div class="day-form-row row" >
+                                        <div class="col-md-11" >
+                                            <ng-container [formGroupName]="i" [formGroup]!="fridayForm">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>من</mat-label>
+                                                            <input matInput type="time" formControlName="from">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <mat-form-field appearance="outline">
+                                                            <mat-label>الي</mat-label>
+                                                            <input matInput type="time" formControlName="to">
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                        <div class="col-md-1" *ngIf="i !=0">
+                                            <mat-icon style="cursor: pointer;" class="delete-btn text-danger mt-3" (click)="deleteTime(i,7)">delete_forever</mat-icon>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                        <div class="col-md-1">
+                            <!-- <button style="height: 51px;" class="btn btn-sm btn-primary w-100 mt-1" >+</button> -->
+                            <mat-icon style="cursor: pointer;" class="delete-btn text-primary mt-3" (click)="addTime(7)">note_add</mat-icon>
+                        </div>
+                    </div>
+                    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="text-center">
+                        <button class="btn btn-primary" type="submit"> حفظ </button>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
